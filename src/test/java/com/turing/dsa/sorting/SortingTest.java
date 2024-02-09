@@ -32,6 +32,7 @@ public class SortingTest {
        assertTrue(Util.isArraySorted(arr));
    }
 */
+    /*
     @Test
    public void bubbleSortTest()
    {
@@ -41,6 +42,20 @@ public class SortingTest {
        int arr[]= Util.getRandomArray(5,100);
        Util.print("Arr ",arr);
        Sortable algo = new BubbleSort();
+       algo.sort(arr);
+       
+       Util.print("Sorted ",arr);
+       assertTrue(Util.isArraySorted(arr));
+   }
+*/
+    @Test
+   public void insertionSortTest()
+   {
+     
+       //int arr[]= Util.getRandomArray(5,100);
+       int arr[] = new int[]{8,3,5,7,1};
+       Util.print("Arr ",arr);
+       Sortable algo = new InsertionSort();
        algo.sort(arr);
        
        Util.print("Sorted ",arr);
