@@ -35,4 +35,39 @@ public class TestDelimiter {
         
         assertEquals(false,matcher.isValid());
     }
+    @Test
+    public void testComplex1()
+    {
+        DelimiterMatcher matcher = new DelimiterMatcher("a{b[c]d}e");
+        
+        assertEquals(true,matcher.isValid());
+    }
+    @Test
+    public void testComplex2()
+    {
+        DelimiterMatcher matcher = new DelimiterMatcher("a{b(c]d}e");
+        
+        assertEquals(false,matcher.isValid());
+    }
+    @Test
+    public void testComplex3()
+    {
+        DelimiterMatcher matcher = new DelimiterMatcher("a[b{c}d]e}");
+        
+        assertEquals(false,matcher.isValid());
+    }
+    @Test
+    public void testComplex4()
+    {
+        DelimiterMatcher matcher = new DelimiterMatcher("{a[(b{c})d]e}");
+        
+        assertEquals(true,matcher.isValid());
+    }
+    @Test
+    public void testComplex5()
+    {
+        DelimiterMatcher matcher = new DelimiterMatcher("{a<(b{c})d>e}");
+        
+        assertEquals(true,matcher.isValid());
+    }
 }

@@ -27,6 +27,9 @@ public class DelimiterMatcher {
     void init()
     {
         this.pair.put('[',']');
+        this.pair.put('{','}');
+        this.pair.put('(',')');
+        this.pair.put('<','>');
     }
     Character getClosing(Character opening)
     {
@@ -70,13 +73,14 @@ public class DelimiterMatcher {
         }
         return false;
     }
+    //<>
     boolean isOpening(char ch)
     {
-        return ch=='[';
+        return this.pair.keySet().contains(ch); 
     }
     boolean isClosing(char ch)
     {
-        return ch==']';
+        return this.pair.values().contains(ch);
     }
     
 }
