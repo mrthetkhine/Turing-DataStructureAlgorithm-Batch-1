@@ -8,17 +8,18 @@ import java.util.Stack;
 /**
  *
  * 
-Step 1: If the scanned character is an operand, put it into postfix expression.
-Step 2: If the scanned character is an operator and operator's stack is empty, push operator into operators' stack.
-Step 3: If the operator's stack is not empty, there may be following possibilities.
-   3.1 If the precedence of scanned operator is greater than the top most operator of operator's stack, push this operator into operator 's stack.
-   3.2 If the precedence of scanned operator is less than the top most operator of operator's stack, pop the operators from operator's stack until we find     a low precedence operator than the scanned character.
-    If the precedence of scanned operator is equal then check the associativity of the operator. If associativity left to right then pop the operators from stack until we find a low precedence operator. If associativity right to left then simply put into stack.
-    If the scanned character is opening round bracket ( '(' ), push it into operator's stack.
-    If the scanned character is closing round bracket ( ')' ), pop out operators from operator's stack until we find an opening bracket ('(' ).
-    Repeat Step 1,2 and 3 till expression has character
-Step 4: Now pop out all the remaining operators from the operator's stack and push into postfix expression.
-Step 5: Exit
+Step 1 : Scan the Infix Expression from left to right.
+Step 2 : If the scanned character is an operand,
+         append it with final Infix to Postfix string.
+Step 3 : Else,//operator
+    Step 3.1 : If the precedence order of the scanned(incoming) operator is greater than the precedence order of the operator in the stack 
+        (or the stack is empty or the stack contains a ‘(‘ or ‘[‘ or ‘{‘), push it on stack.
+    Step 3.2 : Else, Pop all the operators from the stack which are greater than or equal to in precedence than that of the scanned operator. After doing that Push the scanned operator to the stack. (If you encounter parenthesis while popping then stop there and push the scanned operator in the stack.)
+Step 4 : If the scanned character is an ‘(‘ or ‘[‘ or ‘{‘, push it to the stack.
+Step 5 : If the scanned character is an ‘)’or ‘]’ or ‘}’, pop the stack and and output it until a ‘(‘ or ‘[‘ or ‘{‘ respectively is encountered, and discard both the parenthesis.
+Step 6 : Repeat steps 2-6 until infix expression is scanned.
+Step 7 : Print the output
+Step 8 : Pop and output from the stack until it is not empty.
 
  */
 public class PostixTransformer {
@@ -30,73 +31,81 @@ public class PostixTransformer {
         precedence.put('-',1);
         precedence.put('*',2);
         precedence.put('/',2);
+        //precedence.put('(',3);
+        //precedence.put(')',3);
     }
     public static String transform(String infix)
     {
         String postFix= "";
         Stack<Character> opStack = new Stack<Character>();
         for (int i = 0; i < infix.length(); i++) {
-            char ch = infix.charAt(i);
+            char scannedChar = infix.charAt(i);
             
             //Step 1
-            if( isOperand(ch))
+            if( isOperand(scannedChar))
             {
-                postFix+=ch;
+                postFix+=scannedChar;
             }
-            else if(isOperator(ch))
+            //Step 3
+            else if(isOperator(scannedChar) )
             {
-                //Step 2
-                if(  opStack.isEmpty())
+                
+                if(opStack.isEmpty()) 
                 {
-                    opStack.push(ch);
+                    System.out.println("Step 3.1 ");
+                    opStack.push(scannedChar);
                 }
-                else //stack not empty
+                else if(!opStack.isEmpty() && isGreaterThan(scannedChar, opStack.peek()) )
                 {
-                    //step 3
-                    // 3.1
-                    if(isGreaterThan(ch, opStack.peek()))
-                    {
-                        opStack.push(ch);
-                    }
-                    //3.2
-                    /*
-                    If the precedence of scanned operator is less than the top most operator of operator's stack, 
-                        pop the operators from operator's stack until we find a low precedence operator than the scanned character.
-                    */
-                    //scanned < opStack top
-                    else if(isLessThan(ch, opStack.peek()))
-                    {
-                        // pop the operators from operator's stack until we find a low precedence operator than the scanned character.
-                        while( !opStack.isEmpty() &&  (!isLessThan(opStack.peek(), ch)))
-                        {
-                            postFix+=opStack.pop();
-                            
-                        }
-                        //stack empty
-                        opStack.push(ch);
-                    }
-                    //3.3
-                    else if(isEqual(ch, opStack.peek()))//equal case
-                    {
-                        System.out.println("Equal case");
-                        while( !opStack.isEmpty() &&  (!isLessThan(opStack.peek(), ch)))
-                        {
-                            postFix+=opStack.pop();
-                            
-                        }
-                        //stack empty
-                        opStack.push(ch);
-                    }
+                    opStack.push(scannedChar);
                 }
+                else if(!opStack.isEmpty() &&  opStack.contains('('))
+                {
+                    opStack.push(scannedChar);
+                }
+                else if(!opStack.isEmpty() && (isLessThan(scannedChar, opStack.peek()) || isEqual(scannedChar, opStack.peek())))
+                {
+                    while( !opStack.isEmpty() &&  (!isLessThan(opStack.peek(), scannedChar)))
+                    {
+                        postFix+=opStack.pop();
+
+                    }
+                        //stack empty
+                    opStack.push(scannedChar);
+                }
+                      
+                 
             }
-            
-            
-            
+            //Step 4
+            else if(scannedChar=='(')
+            {
+                System.out.println("Step 4 push ( onto stack");
+                opStack.push(scannedChar);
+            }
+            //step 5
+            else if(scannedChar==')')
+            {   
+                //Pop
+                while(!opStack.isEmpty() && opStack.peek()!='(')
+                {
+                    char op = opStack.pop();
+                    if(op != '(' || op!=')')
+                    {
+                        postFix += op;
+                    }
+                    
+                }
+              
+            }
         }
         //Step 4
         while( !opStack.isEmpty())
         {
-            postFix += opStack.pop();
+            char op = opStack.pop();
+            if(op != '(' || op!=')')
+            {
+                postFix += op;
+            }
         }
         return postFix;
     }
@@ -110,14 +119,42 @@ public class PostixTransformer {
     }
     static boolean isGreaterThan(char op1,char op2)
     {
-        return precedence.get(op1) > precedence.get(op2);
+        try
+        {
+            return precedence.get(op1) > precedence.get(op2);
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+       
     }
     static boolean isLessThan(char op1,char op2)
     {
-        return precedence.get(op1) < precedence.get(op2);
+        try
+        {
+            return precedence.get(op1) < precedence.get(op2);
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
     }
     static boolean isEqual(char op1,char op2)
     {
-        return precedence.get(op1).equals(precedence.get(op2));
+        try
+        {
+            return precedence.get(op1).equals(precedence.get(op2));
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+        
+    }
+    public static void main(String[] args) {
+        String output = PostixTransformer.transform("a+(b*c+d)/e");
+        //ab+c*
+        System.out.println("Output "+output);
     }
 }

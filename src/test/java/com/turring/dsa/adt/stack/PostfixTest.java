@@ -19,20 +19,39 @@ public class PostfixTest {
     {
         assertEquals("ab+",PostixTransformer.transform("a+b"));
     }
+    
     @Test
     public void testThreePoint1()
     {
         assertEquals("abc*+",PostixTransformer.transform("a+b*c"));
     }
+    
     @Test
     public void testThreePoint2()
     {
         assertEquals("ab*c+",PostixTransformer.transform("a*b+c"));
     }
-
+    
     @Test
     public void testThreePoint3()
     {
         assertEquals("ab-c+",PostixTransformer.transform("a-b+c"));
     }
+    
+    @Test
+    public void testParaenthesis()
+    {
+        assertEquals("ab+c*",PostixTransformer.transform("(a+b)*c"));
+    }
+    @Test
+    public void testParaenthesis2()
+    {
+        assertEquals("ab+cd/*",PostixTransformer.transform("(a+b)*(c/d)"));
+    }
+    @Test
+    public void testParaenthesis3()
+    {
+        assertEquals("abc*d++e/",PostixTransformer.transform("a+(b*c+d)/e"));
+    }
+    
 }
