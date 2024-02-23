@@ -10,50 +10,81 @@ package com.turing.dsa.adt.queue;
  */
 public class ArrayBasedQueue implements Queue{
 
-    int maxSize;
-    private int[]items;
-    private int front; 
-    private int rear;
-    int noOfItem;
+    protected int maxSize;
+    protected int[]items;
+    protected int front; 
+    protected int rear;
+    protected int noOfItem;
     
-    ArrayBasedQueue(int maxSize)
+    public ArrayBasedQueue(int maxSize)
     {
         this.maxSize =maxSize;
         this.items = new int[maxSize];
-        this.front = 0;
+        this.front = -1;
         this.rear = -1;
         this.noOfItem =0;
     }
     //insert
     @Override
     public void enque(int item) {
-       this.items[++this.rear] = item;
+       if(this.rear <this.maxSize-1)
+       {
+            this.items[++this.rear] = item;
+            this.noOfItem++;
+       }
+       
     }
 
     //take
     @Override
     public int deque() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(this.front<this.maxSize-1)
+        {
+            this.noOfItem--;
+            return this.items[++this.front];
+        }
+        else 
+        {
+            throw new RuntimeException("Queue underflow");
+        }
+       
     }
 
     @Override
     public int peek() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(!this.isEmpty())
+        {
+            return this.items[this.front+1];
+        }
+        else 
+        {
+            throw new RuntimeException("Queue underflow");
+        }
     }
 
     @Override
     public boolean isFull() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.noOfItem == this.maxSize;
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.noOfItem==0;
     }
 
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.noOfItem;
     }
     
+    @Override
+    public String toString()
+    {
+        String data ="";
+        for(int item:this.items )
+        {
+            data+= item + " , ";
+        }
+        return data;
+    }
 }

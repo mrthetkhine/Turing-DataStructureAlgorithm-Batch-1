@@ -43,15 +43,18 @@ public class PostfixTest {
     {
         assertEquals("ab+c*",PostixTransformer.transform("(a+b)*c"));
     }
+    
     @Test
     public void testParaenthesis2()
     {
         assertEquals("ab+cd/*",PostixTransformer.transform("(a+b)*(c/d)"));
     }
+    
     @Test
     public void testParaenthesis3()
     {
-        assertEquals("abc*d++e/",PostixTransformer.transform("a+(b*c+d)/e"));
+        assertEquals("abc*d+e/+",PostixTransformer.transform("a+(b*c+d)/e"));
     }
+
     
 }

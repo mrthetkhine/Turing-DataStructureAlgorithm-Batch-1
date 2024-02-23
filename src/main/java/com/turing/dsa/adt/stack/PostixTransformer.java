@@ -40,7 +40,7 @@ public class PostixTransformer {
         Stack<Character> opStack = new Stack<Character>();
         for (int i = 0; i < infix.length(); i++) {
             char scannedChar = infix.charAt(i);
-            
+            System.out.println("Scanned operator "+scannedChar + " stack  "+opStack);
             //Step 1
             if( isOperand(scannedChar))
             {
@@ -55,24 +55,43 @@ public class PostixTransformer {
                     System.out.println("Step 3.1 ");
                     opStack.push(scannedChar);
                 }
-                else if(!opStack.isEmpty() && isGreaterThan(scannedChar, opStack.peek()) )
+                else
                 {
-                    opStack.push(scannedChar);
-                }
-                else if(!opStack.isEmpty() &&  opStack.contains('('))
-                {
-                    opStack.push(scannedChar);
-                }
-                else if(!opStack.isEmpty() && (isLessThan(scannedChar, opStack.peek()) || isEqual(scannedChar, opStack.peek())))
-                {
-                    while( !opStack.isEmpty() &&  (!isLessThan(opStack.peek(), scannedChar)))
+                    if(isGreaterThan(scannedChar, opStack.peek()) )
                     {
-                        postFix+=opStack.pop();
-
+                        System.out.println("Greater than stack top push "+scannedChar);
+                        opStack.push(scannedChar);
                     }
-                        //stack empty
-                    opStack.push(scannedChar);
+                    else if(isLessThan(scannedChar, opStack.peek()) || isEqual(scannedChar, opStack.peek()))
+                    {
+                        System.out.println("Less than or equal pop");
+                        while(!opStack.empty() && !isLessThan(opStack.peek(), scannedChar))
+                        {
+                            char ch = opStack.pop();
+                            System.out.println("Pop" +ch);
+                            if(ch!='(')
+                            {
+                                postFix+=ch;
+                            }
+                            else
+                            {
+                                opStack.push('(');
+                                break;
+                            }
+                            
+
+                        }
+                            //stack empty
+                        opStack.push(scannedChar);
+                    }
+                    else if(opStack.contains('('))
+                    {
+                        System.out.println("Contain ("+" push "+scannedChar);
+                        opStack.push(scannedChar);
+                    }
+                    
                 }
+                
                       
                  
             }
@@ -94,6 +113,10 @@ public class PostixTransformer {
                         postFix += op;
                     }
                     
+                }
+                if(!opStack.isEmpty()&& opStack.peek()=='(')
+                {
+                    opStack.pop();
                 }
               
             }
