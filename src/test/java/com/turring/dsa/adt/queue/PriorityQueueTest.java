@@ -80,20 +80,23 @@ public class PriorityQueueTest {
         
         int first = queue.deque();
         
-        for (int i = 1; i < 5; i++) {
+        for (int i = 1; i <4; i++) {
             int second = queue.deque();
             System.out.println("First "+first+ " second "+second);
             assertEquals(true, first >= second);
             first = second;
         }
+        //3
         queue.enque(100);
         queue.enque(115);
         queue.enque(5);
         queue.enque(200);
         
+        
         assertEquals(200,queue.deque());
         assertEquals(115,queue.deque());
         assertEquals(100,queue.deque());
         assertEquals(5,queue.deque());
+        assertEquals(3,queue.deque());
     }
 }

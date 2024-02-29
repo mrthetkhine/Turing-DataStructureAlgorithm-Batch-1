@@ -13,6 +13,15 @@ public class PriorityQueue extends CircularQueue{
     {
         super(maxSize);
     }
+    int getNextLowerIndex(int index)
+    {
+        int nextIndex = index -1;
+        if(nextIndex < 0)
+        {
+            nextIndex += this.items.length;
+        }
+        return nextIndex;
+    }
     @Override
     public void enque(int item) {
         if(!this.isFull())//
@@ -24,14 +33,19 @@ public class PriorityQueue extends CircularQueue{
             {
                 System.out.println("Sort rear "+rear + " ==>"+this);
                 int index = rear;
-                while( index >=1 && (this.items[index]> this.items[index-1]))
-                {
+                int comparison = 0;
+                while(comparison < (this.noOfItem-1) && (this.items[index]> this.items[this.getNextLowerIndex(index)])){
                     System.out.println("Swap");
-                    int temp = this.items[index-1];
-                    this.items[index-1] =this.items[index];
+                    int nextIndex = this.getNextLowerIndex(index);
+                    
+                    int temp = this.items[nextIndex];
+                    this.items[nextIndex] =this.items[index];
                     this.items[index] = temp;
-                    index--;
+                    
+                    index = nextIndex;
+                    comparison ++;
                 }
+               
             }
         }
         System.out.println("Queue-> "+this);
