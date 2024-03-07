@@ -9,6 +9,10 @@ package com.turing.dsa.adt.linkedlist;
  * @author macbook
  */
 public interface LinkedList {
-    void insert(Node node);
+    void insertLast(Node node);
+    void insertFirst(Node node);
+    void deleteFirst();
+    void delete(Node node);
+    boolean isEmpty();
     void showAll();
 }

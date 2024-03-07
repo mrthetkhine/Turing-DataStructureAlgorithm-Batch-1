@@ -9,7 +9,7 @@ package com.turing.dsa.adt.stack;
  * @author macbook
  */
 public class StackUnderflowException extends RuntimeException{
-    StackUnderflowException(String message)
+    public StackUnderflowException(String message)
     {
         super(message);
     }

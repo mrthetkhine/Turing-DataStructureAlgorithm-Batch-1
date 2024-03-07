@@ -17,19 +17,36 @@ public class LinkedListImpl implements LinkedList, Iterable<Node>{
     Node last;
     
     
+    //insert last
     @Override
-    public void insert(Node node) {
+    public void insertLast(Node node) {
        
         if(first ==null)
         {
             first = node;
+            last = node;
         }
         //not first element
-        if(last != null)
+        else if(last != null)
         {
             last.next= node;
         }
         last = node;
+    }
+    
+    @Override
+    public void insertFirst(Node node)
+    {
+        if(first == null)
+        {
+            first = node;
+            last = node;
+        }
+        else
+        {
+            node.next = first;
+            first = node;
+        }
     }
 
     @Override
@@ -46,6 +63,70 @@ public class LinkedListImpl implements LinkedList, Iterable<Node>{
     public Iterator<Node> iterator() {
         return new LinkedListIterator();
     }
+
+    @Override
+    public boolean isEmpty()
+    {
+        return this.first ==null;
+    }
+    @Override
+    public void deleteFirst() {
+        if(first!=null)
+        {
+            first = first.next;
+            if(first ==null)
+            {
+                last = null;
+            }
+        }
+    }
+    @Override
+    public void delete(Node node) {
+        
+        if(!this.isEmpty())
+        {
+            if(first == node)//found at first node
+            {
+                first = first.next;
+                node.next = null;
+            }
+            else
+            {
+                Node previous = first;
+                Node current = previous.next;
+                
+                while(current != null)
+                {
+                    if(current ==node)
+                    {
+                        if(node.next ==null)//last
+                        {
+                            last = previous;
+                        }
+                        //delete
+                        previous.next = current.next;
+                        node.next = null;
+                        
+                        //update last pointer
+                       
+                        break;
+                    }
+                
+                    previous = current;
+                    current = current.next;
+                }
+            }
+        }
+    }
+    public Node getLast()
+    {
+        return last;
+    }
+    public Node getFirst()
+    {
+        return first;
+    }
+    
     class LinkedListIterator implements Iterator<Node>
     {
 
