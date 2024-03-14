@@ -12,7 +12,7 @@ public class Array {
     int size;
     protected int[] items;
     
-    Array(int arr[])
+    public Array(int arr[])
     {
         this.items = arr;
     }
