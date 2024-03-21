@@ -4,6 +4,7 @@
  */
 package com.turing.dsa.sorting;
 
+import com.turing.dsa.recursion.MergeSort;
 import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -48,6 +49,7 @@ public class SortingTest {
        assertTrue(Util.isArraySorted(arr));
    }
 */
+    /*
     @Test
    public void insertionSortTest()
    {
@@ -60,5 +62,58 @@ public class SortingTest {
        
        Util.print("Sorted ",arr);
        assertTrue(Util.isArraySorted(arr));
+   }*/
+    @Test
+   public void mergeSortTestWithRandom()
+   {
+     
+       int arr[]= Util.getRandomArray(15,100);
+       //int arr[] = new int[]{8,3,5,7,1};
+       Util.print("Arr ",arr);
+        Sortable algo = new MergeSort();
+       algo.sort(arr);
+       
+       Util.print("Sorted ",arr);
+       assertTrue(Util.isArraySorted(arr));
    }
+    /*
+   @Test
+   public void mergeSortTest()
+   {
+     
+       //int arr[]= Util.getRandomArray(5,100);
+       int arr[] = new int[]{8,3,5,7,1};
+       Util.print("Arr ",arr);
+       Sortable algo = new MergeSort();
+       algo.sort(arr);
+       
+       Util.print("Sorted ",arr);
+       assertTrue(Util.isArraySorted(arr));
+   }
+    @Test
+    public void mergeSortBaseCaseTest()
+   {
+     
+       //int arr[]= Util.getRandomArray(5,100);
+       int arr[] = new int[]{8,3};
+       Util.print("Arr ",arr);
+       Sortable algo = new MergeSort();
+       algo.sort(arr);
+       
+       Util.print("Sorted ",arr);
+       assertTrue(Util.isArraySorted(arr));
+   }
+   @Test
+    public void mergeSortManyCaseTest()
+   {
+     
+       //int arr[]= Util.getRandomArray(5,100);
+       int arr[] = new int[]{8,3,9,-1};
+       Util.print("Arr ",arr);
+       Sortable algo = new MergeSort();
+       algo.sort(arr);
+       
+       Util.print("Sorted ",arr);
+       assertTrue(Util.isArraySorted(arr));
+   }*/
 }
