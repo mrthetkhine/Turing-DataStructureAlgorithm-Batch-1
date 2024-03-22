@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turing.dsa.sorting.QuickSortTest" time="0.026" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/test-classes:/Users/Project/Turing/DSA/DSA-Batch-1/target/classes:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/Users/thetkhine/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/Users/thetkhine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite/1.9.1/junit-platform-suite-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-api/1.9.1/junit-platform-suite-api-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.9.1/junit-platform-suite-engine-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.9.1/junit-platform-suite-commons-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.jar:"/>
+    <property name="java.vm.vendor" value="OpenLogic"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://openlogic.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="MM"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter1304366811015436312.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-03-22T20-33-33_110-jvmRun1 surefire14953457728360775510tmp surefire_04355045795757917698tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.turing.dsa.sorting.QuickSortTest"/>
+    <property name="surefire.test.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/test-classes:/Users/Project/Turing/DSA/DSA-Batch-1/target/classes:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/Users/thetkhine/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/Users/thetkhine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite/1.9.1/junit-platform-suite-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-api/1.9.1/junit-platform-suite-api-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.9.1/junit-platform-suite-engine-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.9.1/junit-platform-suite-commons-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/thetkhine"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-04-19"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/Project/Turing/DSA/DSA-Batch-1"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter1304366811015436312.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="11.0.15+10-adhoc.admin.jdk11u"/>
+    <property name="user.name" value="macbook"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.6.3"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="OpenLogic-OpenJDK"/>
+    <property name="maven.ext.class.path" value="/Applications/NetBeans/Apache NetBeans 14.app/Contents/Resources/NetBeans/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/Users/thetkhine/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://techsupport.roguewave.com/"/>
+    <property name="java.io.tmpdir" value="/var/folders/ky/_2mj58qx3qg06pb39kbxgwjw0000gn/T/"/>
+    <property name="java.version" value="11.0.15"/>
+    <property name="user.dir" value="/Users/Project/Turing/DSA/DSA-Batch-1"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/thetkhine/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="OpenLogic"/>
+    <property name="java.vm.version" value="11.0.15+10-adhoc.admin.jdk11u"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="testQuickSoftBaseCaseAnotherOrder" classname="com.turing.dsa.sorting.QuickSortTest" time="0.018"/>
+  <testcase name="testQuickSoftManyCase" classname="com.turing.dsa.sorting.QuickSortTest" time="0.001"/>
+  <testcase name="testQuickSoftBaseCase" classname="com.turing.dsa.sorting.QuickSortTest" time="0.001"/>
+</testsuite>
