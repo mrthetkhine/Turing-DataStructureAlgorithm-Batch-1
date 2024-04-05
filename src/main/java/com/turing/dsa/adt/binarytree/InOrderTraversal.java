@@ -31,11 +31,11 @@ public class InOrderTraversal implements Iterable<Node>{
         public TreeIterator() {
             current = tree.root;
             this.items = new ArrayList<Node>();
-            this.collectInorder(this.current);
+            this.inorderTraverse(this.current);
         }
         //lRr
 
-        void collectInorder(Node current)
+        void inorderTraverse(Node current)
         {
             if(current ==null)
             {
@@ -46,13 +46,13 @@ public class InOrderTraversal implements Iterable<Node>{
             //left
             if(current.left != null)
             {
-                this.collectInorder(current.left);
+                this.inorderTraverse(current.left);
             }
             //Root
             this.items.add(current);
             //Right
             if(current.right!=null){
-                this.collectInorder(current.right);
+                this.inorderTraverse(current.right);
             }
         }
         @Override

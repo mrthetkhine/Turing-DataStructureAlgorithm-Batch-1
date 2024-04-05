@@ -32,5 +32,8 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
-    
+    public int getValue()
+    {
+        return this.value;
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.binarytree.InorderTest" time="0.027" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.034" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,10 +16,10 @@
     <property name="user.country" value="MM"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter8228302201235535698.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-04-05T19-37-31_303-jvmRun1 surefire378598859101515703tmp surefire_05485169582142169106tmp"/>
+    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter16067440594868645718.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-04-05T20-36-16_118-jvmRun1 surefire2557539100261408643tmp surefire_01019054989104129778tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.turring.dsa.adt.binarytree.InorderTest"/>
+    <property name="test" value="com.turring.dsa.adt.binarytree.BinarySearchTreeTest"/>
     <property name="surefire.test.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/test-classes:/Users/Project/Turing/DSA/DSA-Batch-1/target/classes:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/Users/thetkhine/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/Users/thetkhine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite/1.9.1/junit-platform-suite-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-api/1.9.1/junit-platform-suite-api-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.9.1/junit-platform-suite-engine-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.9.1/junit-platform-suite-commons-1.9.1.jar:/Users/thetkhine/.m2/repository/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/thetkhine"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter8228302201235535698.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter16067440594868645718.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.15+10-adhoc.admin.jdk11u"/>
@@ -63,7 +63,6 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testInOrderManyCase" classname="com.turring.dsa.adt.binarytree.InorderTest" time="0.017"/>
-  <testcase name="testInOrderBaseCase" classname="com.turring.dsa.adt.binarytree.InorderTest" time="0.001"/>
-  <testcase name="testInOrderBaseCase0" classname="com.turring.dsa.adt.binarytree.InorderTest" time="0.001"/>
+  <testcase name="testInsert" classname="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.027"/>
+  <testcase name="testSearch" classname="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.001"/>
 </testsuite>
