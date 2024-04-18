@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.034" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.026" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="MM"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter16067440594868645718.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-04-05T20-36-16_118-jvmRun1 surefire2557539100261408643tmp surefire_01019054989104129778tmp"/>
+    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter7141940916468312314.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-04-18T21-14-11_125-jvmRun1 surefire11408162489109126347tmp surefire_012502183743551165895tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.turring.dsa.adt.binarytree.BinarySearchTreeTest"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter16067440594868645718.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter7141940916468312314.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.15+10-adhoc.admin.jdk11u"/>
@@ -63,6 +63,5 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testInsert" classname="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.027"/>
-  <testcase name="testSearch" classname="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testDeleteNodeWithBothChild" classname="com.turring.dsa.adt.binarytree.BinarySearchTreeTest" time="0.019"/>
 </testsuite>

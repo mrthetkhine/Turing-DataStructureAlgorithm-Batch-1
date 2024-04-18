@@ -36,4 +36,20 @@ public class Node {
     {
         return this.value;
     }
+    public boolean isLeaf()
+    {
+        return left ==null && right==null;
+    }
+    public boolean haveOnlyLeftChild()
+    {
+        return left!=null && right==null;
+    }
+    public boolean haveOnlyRightChild()
+    {
+        return left==null && right!=null;
+    }
+    public boolean haveBothChild()
+    {
+        return left!=null && right!=null;
+    }
 }
