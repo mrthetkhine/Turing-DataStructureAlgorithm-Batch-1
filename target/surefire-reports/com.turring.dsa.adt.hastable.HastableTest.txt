@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.turring.dsa.adt.hastable.HastableTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.535 s <<< FAILURE! - in com.turring.dsa.adt.hastable.HastableTest
+testHashTable  Time elapsed: 0.384 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.turring.dsa.adt.hastable.HastableTest.testHashTable(HastableTest.java:26)
+
