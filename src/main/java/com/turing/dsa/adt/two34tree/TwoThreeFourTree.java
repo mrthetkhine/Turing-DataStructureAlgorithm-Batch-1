@@ -11,12 +11,16 @@ package com.turing.dsa.adt.two34tree;
 public class TwoThreeFourTree<T extends Number> {
     Node<T> root;
     
-    void insert(T value)
+    public Node<T> getRoot()
+    {
+        return root;
+    }
+    public void insert(T value)
     {
         if(root == null)
         {
-            Node<T> node = new Node<T>(2);
-            node.keys[0] = value;
+            Node<T> node = new Node<T>();
+            node.insertKey(value);
             this.root = node;
         }
         else
@@ -25,6 +29,7 @@ public class TwoThreeFourTree<T extends Number> {
             //Search 
             if(current.isLeaf() && (! current.isFourNode()))
             {
+                current.insertKey(value);
             }
         }
     }

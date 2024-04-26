@@ -16,15 +16,24 @@ public class Node<T extends Number> {
     public ArrayList<Node<T>> children;
     
     static int ORDER = 4;
-    int noOfNode;//2,3 or 4
-    public Node(int noOfNode)
+    int noOfNode = 1;//2,3 or 4
+    
+    public Node()
     {
-        this.noOfNode = noOfNode;
         this.keys =(T[]) new Number[ORDER-1];
         this.children = new ArrayList<>();
     }
-    public void insertKey(T value)
+    Node<T> getParent()
     {
+        return this.parent;
+    }
+    public ArrayList<Node<T>> getChildren()
+    {
+        return this.children;
+    }
+    public int insertKey(T value)
+    {
+        this.noOfNode ++;
         int posToInsert  = 0;
         for (int i = 0; i < keys.length; i++) {
             if(keys[i]==null || keys[i].doubleValue()>value.doubleValue())
@@ -37,6 +46,11 @@ public class Node<T extends Number> {
             keys[i] = keys[i-1];
         }
         keys[posToInsert] = value;
+        return posToInsert;
+    }
+    public void setParent(Node<T> parent)
+    {
+        this.parent= parent;
     }
     public int getN_Node()
     {
@@ -50,8 +64,72 @@ public class Node<T extends Number> {
     {
         return this.children.size()==0;
     }
+    public Node<T> split(Node<T> node)
+    {
+        System.out.println("Split->>> "+node);
+        if(! node.isFourNode())
+        {
+            return node;
+        }
+        else
+        {
+            if(node.getParent()==null)
+            {
+                System.out.println("No parent case");
+                //Split 4 node->(3 key)
+                return this.splitWhenNoParent(node);
+            }
+            else
+            {
+                return splitNodeWithParent(node);
+            }
+            
+        }
+    }
+
+    Node<T> splitNodeWithParent(Node<T> node) {
+        System.out.println("case with parent");
+        Node<T> parent = node.getParent();
+        Number middle = node.keys[1];
+        
+        int parentInsertPos= parent.insertKey((T)middle);
+        parent.children.remove(parentInsertPos);
+        
+        System.out.println("Inserted at "+parentInsertPos);
+        Node<T> childOne= new Node<T>();
+        childOne.insertKey((T)node.keys[0]);
+        childOne.setParent(parent);
+        
+        Node<T> childTwo = new Node<T>();
+        childTwo.insertKey((T)node.keys[2]);
+        childTwo.setParent(parent);
+        
+        parent.getChildren().add(parentInsertPos, childTwo);
+        parent.getChildren().add(parentInsertPos, childOne);
+        return parent;
+    }
+    Node<T> splitWhenNoParent(Node<T> node)
+    {
+        Number middle = node.keys[1];
+        Node<T> parent = new Node<T>();
+        parent.insertKey((T)middle);
+
+        Node<T> childOne= new Node<T>();
+        childOne.insertKey((T)node.keys[0]);
+        childOne.setParent(parent);
+        
+        Node<T> childTwo = new Node<T>();
+        childTwo.insertKey((T)node.keys[2]);
+        childTwo.setParent(parent);
+        
+        parent.children.add(childOne);
+        parent.children.add(childTwo);
+
+        node = null;
+        return parent;
+    }
     public static void main(String[] args) {
-        Node<Integer> node= new Node<Integer>(2);
+        Node<Integer> node= new Node<Integer>();
         node.keys[0] = 5;
         
         node.insertKey(10);
