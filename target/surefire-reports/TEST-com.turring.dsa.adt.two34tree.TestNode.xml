@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.two34tree.TestNode" time="0.058" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.two34tree.TestNode" time="0.041" tests="2" errors="1" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="MM"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter12948400216719131495.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-04-26T21-18-58_809-jvmRun1 surefire14500727864556380651tmp surefire_05411968539395965428tmp"/>
+    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter12387080965670801634.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-05-02T21-22-31_776-jvmRun1 surefire6620039533755641877tmp surefire_01382943694355686935tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.turring.dsa.adt.two34tree.TestNode"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter12948400216719131495.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter12387080965670801634.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.15+10-adhoc.admin.jdk11u"/>
@@ -63,7 +63,26 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testWithTwoNodeParentTwo" classname="com.turring.dsa.adt.two34tree.TestNode" time="0.043"/>
-  <testcase name="testWithTwoNodeParent" classname="com.turring.dsa.adt.two34tree.TestNode" time="0.002"/>
-  <testcase name="testWithTwoNodeParent2" classname="com.turring.dsa.adt.two34tree.TestNode" time="0.002"/>
+  <testcase name="testSlitNodeOneLevel" classname="com.turring.dsa.adt.two34tree.TestNode" time="0.029"/>
+  <testcase name="testSlitNodeTwoevel" classname="com.turring.dsa.adt.two34tree.TestNode" time="0.006">
+    <error message="Index 0 out of bounds for length 0" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.turring.dsa.adt.two34tree.TestNode.testSlitNodeTwoevel(TestNode.java:385)
+</error>
+    <system-out><![CDATA[Split->>>  150 200 300
+No parent case
+ChildTwo  300 301 302
+Split->>>  300 301 302
+case with parent node  300 301 302
+Inserted at 1
+Split->>>  302 303 304
+case with parent node  302 303 304
+Inserted at 2
+Split->>>  304 305 306
+case with parent node  304 305 306
+SPLIT Parent=====
+Split->>>  200 301 303
+No parent case
+Noof child 0
+]]></system-out>
+  </testcase>
 </testsuite>
