@@ -363,7 +363,7 @@ public class TestNode {
          /*
                        
                     [200][301][303]
-                [150]   [300] [302] [304,305,306]
+                [150]   [300] [302] [304,305,306]<-l1C4
         */
         Node<Integer> finalRoot = l1C4.split(l1C4);
         /*
@@ -382,16 +382,16 @@ public class TestNode {
         
         ArrayList<Node<Integer>> level3ChildRightMost =  fl1C2.getChildren();
         System.out.println("Noof child "+level3ChildRightMost.size());
-        Node<Integer> rightMostNode = level3ChildRightMost.get(0);
+        Node<Integer> rightMostNode = level3ChildRightMost.get(1);
         assertEquals(304,rightMostNode.keys[0]); 
-        //assertEquals(305,rightMostNode.keys[1]); 
-        //assertEquals(306,rightMostNode.keys[2]); 
+        assertEquals(305,rightMostNode.keys[1]); 
+        assertEquals(306,rightMostNode.keys[2]); 
         
         /*
             ->307
                             [301]
-                      [200]  [303] 
-               [150]   [300] [302]      [304,305,306]
+                     [200]         [303] 
+               [150]   [300]     [302]   [304,305,306]
         */
         
     }

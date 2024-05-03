@@ -118,10 +118,39 @@ public class TwoThreeFourVisualizer extends javax.swing.JFrame {
         Node<Integer> c3 = children2.get(2);
         c3.insertKey(303);
         c3.insertKey(304);
-       
+       /*
+                [200,301]
+            [150]   [300] [302,303,304]<-c3
+        */
         Node<Integer> root = c3.split(c3);
       
-        return root;
+        
+       
+        /*
+        /*
+                [200,301,303]
+            [150]   [300] [302] [304]<-l1C4
+        */
+       
+        
+        ArrayList<Node<Integer>> level1Child = root.getChildren();
+        
+        Node<Integer> l1C1 = level1Child.get(0);
+        Node<Integer> l1C2 = level1Child.get(1);
+        Node<Integer> l1C3 = level1Child.get(2);
+        Node<Integer> l1C4 = level1Child.get(3);
+        
+        
+        l1C4.insertKey(305);
+        l1C4.insertKey(306);
+         /*
+                       
+                    [200][301][303]
+                [150]   [300] [302] [304,305,306]
+        */
+        Node<Integer> finalRoot = l1C4.split(l1C4);
+      
+        return finalRoot;
     }
     void traverseTree(DefaultMutableTreeNode parent,Node<Integer> node)
     {

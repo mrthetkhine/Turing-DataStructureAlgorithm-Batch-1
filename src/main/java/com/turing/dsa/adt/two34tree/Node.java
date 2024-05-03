@@ -69,6 +69,7 @@ public class Node<T extends Number> {
         System.out.println("Split->>> "+node);
         if(! node.isFourNode())
         {
+            System.out.println("Not four node");
             return node;
         }
         else
@@ -94,10 +95,14 @@ public class Node<T extends Number> {
         if(parent.isFourNode())
         {
             //split parent
-            System.out.println("SPLIT Parent=====");
-            Node<T> recuParent =  parent.split(parent);
-            
-            return recuParent;
+            while(parent.isFourNode())
+            {
+                parent =  parent.split(parent);
+            }
+            //We need to handle case for splitting parent with have 4 child
+            //need to split 1,2->left child, 3,4 ->right child
+            System.out.println("isFour "+node.getParent().isFourNode());
+            return parent;
         }
         else
         {
@@ -117,9 +122,24 @@ public class Node<T extends Number> {
 
             parent.getChildren().add(parentInsertPos, childTwo);
             parent.getChildren().add(parentInsertPos, childOne);
+            if(!node.isLeaf())
+            {
+                System.out.println("NonLeaf node split Children== "+node.getChildren().size());
+                splitChild(node, childOne, childTwo);
+                node = null;
+            }
             return parent;
         }
         
+    }
+
+    void splitChild(Node<T> node, Node<T> childOne, Node<T> childTwo) {
+        ArrayList<Node<T>> children =  node.getChildren();
+        childOne.children.add(children.get(0));
+        childOne.children.add(children.get(1));
+        
+        childTwo.children.add(children.get(2));
+        childTwo.children.add(children.get(3));
     }
     Node<T> splitWhenNoParent(Node<T> node)
     {
@@ -138,6 +158,11 @@ public class Node<T extends Number> {
         parent.children.add(childOne);
         parent.children.add(childTwo);
 
+        if(!node.isLeaf())
+        {
+            System.out.println("NonLeaf node split Children==> "+node.getChildren().size());
+            splitChild(node, childOne, childTwo);
+        }
         node = null;
         return parent;
     }
