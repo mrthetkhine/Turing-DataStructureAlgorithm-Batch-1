@@ -74,10 +74,11 @@ public class Node<T extends Number> {
         }
         else
         {
-            if(node.getParent()==null)
+            if(node.getParent()==null)//Root
             {
                 System.out.println("No parent case");
                 //Split 4 node->(3 key)
+                
                 return this.splitWhenNoParent(node);
             }
             else
