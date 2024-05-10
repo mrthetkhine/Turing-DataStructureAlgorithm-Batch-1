@@ -5,7 +5,7 @@
 package com.turring.dsa.adt.heap;
 
 import com.turing.dsa.adt.binarytree.Node;
-import com.turing.dsa.adt.heap.CompleteBinaryTree;
+import com.turing.dsa.adt.heap.MaxHeap;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -23,7 +23,7 @@ public class HeapTest {
            [2]
         */
         Integer[] items = {1,2};
-        CompleteBinaryTree tree = new CompleteBinaryTree(items);
+        MaxHeap tree = new MaxHeap(items);
         
         Node root = tree.getRoot();
         assertEquals(1,root.getValue());
@@ -37,7 +37,7 @@ public class HeapTest {
            [2] [3]
         */
         Integer[] items = {1,2,3};
-        CompleteBinaryTree tree = new CompleteBinaryTree(items);
+        MaxHeap tree = new MaxHeap(items);
         
         Node root = tree.getRoot();
         assertEquals(1,root.getValue());
@@ -54,7 +54,7 @@ public class HeapTest {
         */
         Integer[] items = {1,2,3,4,5,6};
         
-        CompleteBinaryTree tree = new CompleteBinaryTree(items);
+        MaxHeap tree = new MaxHeap(items);
         
         Node root = tree.getRoot();
         assertEquals(1,root.getValue());
@@ -69,5 +69,45 @@ public class HeapTest {
         
         assertEquals(6,node3.getLeft().getValue());
         
+    }
+    @Test
+    public void testHeapifyBase()
+    {
+        Integer[] items = {1,3,2}; //Root 7
+        MaxHeap tree = new MaxHeap(items);
+        tree.heapify();
+        tree.buildTree();
+        Node root = tree.getRoot();
+        assertEquals(3,root.getValue());
+    }
+    @Test
+    public void testHeapifyComplexCase()
+    {
+        Integer[] items = {1,7,9,4,12,3,20}; //Root 20
+        MaxHeap tree = new MaxHeap(items);
+        tree.heapify();
+        tree.buildTree();
+        Node root = tree.getRoot();
+        assertEquals(20,root.getValue());
+    }
+    @Test
+    public void testInsert()
+    {
+        Integer[] items = {1,7,9,4,12,3,20}; //Root 20
+        MaxHeap tree = new MaxHeap(items);
+        tree.insert(100);
+       
+        Node root = tree.getRoot();
+        assertEquals(100,root.getValue());
+    }
+    @Test
+    public void testDelete()
+    {
+        Integer[] items = {1,7,9,4,12,3,20}; //Root 20
+        MaxHeap tree = new MaxHeap(items);
+        tree.delete(20);
+       
+        Node root = tree.getRoot();
+        assertEquals(12,root.getValue());
     }
 }

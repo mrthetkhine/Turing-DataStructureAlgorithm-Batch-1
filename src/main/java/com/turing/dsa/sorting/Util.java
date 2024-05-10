@@ -20,7 +20,7 @@ public class Util {
         }
         return arr;
    }
-    static void print(String message,int[]arr)
+    public static void print(String message,int[]arr)
     {
         System.out.print(message);
         for (int i = 0; i < arr.length; i++) {
@@ -28,7 +28,7 @@ public class Util {
         }
         System.out.println("");
     }
-    static boolean isArraySorted(int[] arr)
+    public static boolean isArraySorted(int[] arr)
     {
         for (int i = 0; i < arr.length-1; i++) {
             if(arr[i] > arr[i+1])
