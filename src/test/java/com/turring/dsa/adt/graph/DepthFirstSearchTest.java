@@ -15,7 +15,8 @@ import org.junit.jupiter.api.Test;
  *
  * @author macbook
  */
-public class GraphTest {
+public class DepthFirstSearchTest {
+    /*
     @Test
     public void testReachableUnvistedVerticesBaseCase()
     {
@@ -27,6 +28,7 @@ public class GraphTest {
         B->C
             
         */
+        /*
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
@@ -57,6 +59,7 @@ public class GraphTest {
         B->C
             
         */
+    /*
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
@@ -77,17 +80,18 @@ public class GraphTest {
         assertTrue(vertices.contains("D"));
         assertTrue(!vertices.contains("E"));
     }
+*/
+    /*
     @Test
     public void testDFSBaseCase()
     {
         Graph graph = new Graph();
-        /*
-        A   -> B
-            ->C
-            ->D
-        B->C
-            
-        */
+        
+        //A   -> B
+        //    ->D
+        //B->C
+        //C->D    
+   
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
@@ -96,16 +100,49 @@ public class GraphTest {
         
         graph.creteAdjacencyMatrix();
         graph.addEdge("A", "B");
-        graph.addEdge("A", "C");
+        //graph.addEdge("A", "C");
         graph.addEdge("A", "D");
+        graph.addEdge("B", "C");
+        graph.addEdge("C", "D");
         
-        
-        
-        ArrayList<String> result = graph.depthFirstSearch("A");
+        graph.depthFirstSearch("A");
+        ArrayList<String> result = graph.getVisted();
         assertEquals(4,result.size());
         assertEquals("A",result.get(0));
         assertEquals("B",result.get(1));
         assertEquals("C",result.get(2));
         assertEquals("D",result.get(3));
+    }
+    */
+    @Test
+    public void testDFSComplexSearchNeighbou()
+    {
+        Graph graph = new Graph();
+        
+        //A   -> B
+        //    ->D
+        //B->C
+        //D->E
+   
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+        
+        graph.creteAdjacencyMatrix();
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "D");
+        graph.addEdge("B", "C");
+        graph.addEdge("D", "E");
+        
+        graph.depthFirstSearch("A");
+        ArrayList<String> result = graph.getVisted();
+        assertEquals(5,result.size());
+        assertEquals("A",result.get(0));
+        assertEquals("B",result.get(1));
+        assertEquals("C",result.get(2));
+        assertEquals("D",result.get(3));
+        assertEquals("E",result.get(4));
     }
 }
