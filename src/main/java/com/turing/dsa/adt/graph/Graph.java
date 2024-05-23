@@ -6,6 +6,7 @@ package com.turing.dsa.adt.graph;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -48,7 +49,7 @@ public class Graph {
         int fromIndex = this.vertices.indexOf(from);
         
         for (int i = 0; i < this.vertices.size(); i++) {
-            if(this.adjacencyMatrix[fromIndex][i] ==1)
+            if(this.adjacencyMatrix[fromIndex][i] != 0)
             {
                 int toIndex = i;
                 String toVertice =this.vertices.get(toIndex);
@@ -139,5 +140,30 @@ public class Graph {
            
         }
         
+    }
+    public void breadthFirstSearch(String from)
+    {
+        Queue<String> queue = new LinkedList<>();
+        
+        queue.add(from);
+        
+        while(!queue.isEmpty())
+        {
+           
+            String vertice = queue.remove();
+            if(!this.visited.contains(vertice))
+            {
+                this.markedVisited(vertice);
+            }
+            
+            ArrayList<String> neighbours = this.getUnvistedReachableVertices(vertice);
+            for(String v : neighbours)
+            {
+                if(!this.visited.contains(v))
+                {
+                    queue.add(v);
+                }
+            }
+        }
     }
 }
