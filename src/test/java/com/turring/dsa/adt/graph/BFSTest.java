@@ -31,7 +31,7 @@ public class BFSTest {
         graph.addVertex("D");
         graph.addVertex("E");
         
-        graph.creteAdjacencyMatrix();
+        graph.createAdjacencyMatrix();
         graph.addEdge("A", "B");
         graph.addEdge("A", "D");
         graph.addEdge("B", "C");
@@ -65,7 +65,7 @@ public class BFSTest {
         graph.addVertex("D");
         graph.addVertex("E");
         
-        graph.creteAdjacencyMatrix();
+        graph.createAdjacencyMatrix();
         graph.addEdge("A", "B");
         graph.addEdge("A", "D");
         graph.addEdge("B", "C");

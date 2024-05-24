@@ -23,7 +23,7 @@ public class Graph {
     {
         this.vertices.add(label);    
     }
-    public void creteAdjacencyMatrix()
+    public void createAdjacencyMatrix()
     {
         this.adjacencyMatrix = new int[vertices.size()][vertices.size()];
     }

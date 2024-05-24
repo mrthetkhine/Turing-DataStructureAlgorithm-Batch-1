@@ -35,7 +35,7 @@ public class DepthFirstSearchTest {
         graph.addVertex("D");
         graph.addVertex("E");
         
-        graph.creteAdjacencyMatrix();
+        graph.createAdjacencyMatrix();
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("A", "D");
@@ -66,7 +66,7 @@ public class DepthFirstSearchTest {
         graph.addVertex("D");
         graph.addVertex("E");
         
-        graph.creteAdjacencyMatrix();
+        graph.createAdjacencyMatrix();
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("A", "D");
@@ -98,7 +98,7 @@ public class DepthFirstSearchTest {
         graph.addVertex("D");
         graph.addVertex("E");
         
-        graph.creteAdjacencyMatrix();
+        graph.createAdjacencyMatrix();
         graph.addEdge("A", "B");
         //graph.addEdge("A", "C");
         graph.addEdge("A", "D");
@@ -130,7 +130,7 @@ public class DepthFirstSearchTest {
         graph.addVertex("D");
         graph.addVertex("E");
         
-        graph.creteAdjacencyMatrix();
+        graph.createAdjacencyMatrix();
         graph.addEdge("A", "B");
         graph.addEdge("A", "D");
         graph.addEdge("B", "C");
