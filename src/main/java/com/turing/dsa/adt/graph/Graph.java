@@ -7,6 +7,7 @@ package com.turing.dsa.adt.graph;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -15,8 +16,8 @@ import java.util.Stack;
  * @author macbook
  */
 public class Graph {
-    ArrayList<String> vertices = new ArrayList<>();
-    ArrayList<String> visited = new ArrayList<>();
+    protected ArrayList<String> vertices = new ArrayList<>();
+    protected ArrayList<String> visited = new ArrayList<>();
     int [][]adjacencyMatrix ;
     
     public void addVertex(String label)
@@ -26,6 +27,10 @@ public class Graph {
     public void createAdjacencyMatrix()
     {
         this.adjacencyMatrix = new int[vertices.size()][vertices.size()];
+    }
+    public List<String> getVertices()
+    {
+        return this.vertices;
     }
     public void addEdge(String from, String to)
     {
