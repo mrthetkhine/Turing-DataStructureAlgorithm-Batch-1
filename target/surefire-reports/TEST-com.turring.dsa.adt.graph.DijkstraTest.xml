@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.graph.DijkstraTest" time="0.045" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.turring.dsa.adt.graph.DijkstraTest" time="0.038" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="MM"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter15414854988222441485.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-05-31T21-05-00_657-jvmRun1 surefire18165080324029612036tmp surefire_011745243590604211205tmp"/>
+    <property name="sun.java.command" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter11830119102388703968.jar /Users/Project/Turing/DSA/DSA-Batch-1/target/surefire 2024-06-06T21-06-52_335-jvmRun1 surefire6579144679683632807tmp surefire_01026441248635357447tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.turring.dsa.adt.graph.DijkstraTest"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter15414854988222441485.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Project/Turing/DSA/DSA-Batch-1/target/surefire/surefirebooter11830119102388703968.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.15+10-adhoc.admin.jdk11u"/>
@@ -63,6 +63,5 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testSetup" classname="com.turring.dsa.adt.graph.DijkstraTest" time="0.035"/>
-  <testcase name="testDijkstra" classname="com.turring.dsa.adt.graph.DijkstraTest" time="0.002"/>
+  <testcase name="testDijkstraShortestPath" classname="com.turring.dsa.adt.graph.DijkstraTest" time="0.032"/>
 </testsuite>
